@@ -1,7 +1,9 @@
-import { ValuesController } from "./Controllers/ValuesController.js";
+import { CluesController } from "./Controllers/CluesController.js";
+import { PlayersController } from "./Controllers/PlayersController.js";
 
 class App {
-  valuesController = new ValuesController();
+  playersController = new PlayersController()
+  cluesController = new CluesController()
 }
 
 window["app"] = new App();

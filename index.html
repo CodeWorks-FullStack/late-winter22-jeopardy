@@ -8,6 +8,7 @@
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>jeopardy</title>
@@ -26,10 +27,48 @@
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+        <div class="col-4">
+          <div class="d-flex justify-content-between align-items-center" onclick="app.playersController.addPlayer()">
+            <h1>Players</h1>
+            <button class="btn btn-info h-75" title="add player"><i class="mdi mdi-plus"></i></button>
+          </div>
+          <div id="all-players" class="row">
+            <!-- list template -->
+            <!-- <div class="col-12 d-flex align-items-center p-2 border bg-white shadow justify-content-between">
+              <h3 class="me-5">Name</h3><span class="text-warning darken-20">400</span>
+              <button class="btn btn-outline-success">set active</button>
+            </div> -->
+            <!--  -->
+          </div>
+        </div>
+        <div class="col-8">
+          <div id="active-player" class="row">
+            <!-- player template -->
+            <!-- <div class="col-12 mt-2 bg-primary shadow p-2 text-center">
+              <h1>Name</h1>
+              <div>
+                <b>40000</b><br />
+                <span>Clues: 58 | correct: 1 | incorrect: 57</span>
+              </div>
+            </div> -->
+            <!--  -->
+          </div>
+          <div id="clue" class="row bg-white p-4 shadow rounded text-center">
+            <!-- clue template -->
+            <!-- <h4>category</h4>
+            <h2>Clue</h2>
+            <b>points worth</b>
+            <div class="bg-dark rounded p-5 text-light">answer</div>
+            <div class="d-flex justify-content-around mt-3">
+              <div class="btn btn-danger w-50 p-2">wrong</div>
+              <div class="btn btn-success w-50 p-2">success</div>
+            </div> -->
+            <!--  -->
+          </div>
+          <button class="btn btn-primary" onclick="app.cluesController.getClue()"> get clue</button>
         </div>
       </div>
+    </div>
     </div>
   </main>
   <footer class="bg-dark text-light">
@@ -38,6 +77,7 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
